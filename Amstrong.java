@@ -11,10 +11,10 @@ public class Demo {
     	 sum+=Math.pow(Integer.valueOf(str.substring(i,i+1)), l);
      }
     	if(num==sum){
-    		System.out.println("Amstrong number");
+    		System.out.println("Yes");
     	} 
     	else{
-    		System.out.println("Not Amstrong Number");
+    		System.out.println("No");
     	}
     in.close();
 	}
