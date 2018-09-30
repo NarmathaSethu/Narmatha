@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<style>
+	@media(min-width: 500px){
+.image {
+  opacity: 1;
+  transition: .5s ease;
+}
+.middle {
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left:8%;
+  transform: translate(50%, -50%);
+}
+.middle1 {
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left:35%;
+  transform: translate(50%, -50%);
+}
+.middle11{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 110%;
+  left:8%;
+  transform: translate(50%, -50%);
+}
+.middle12{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 110%;
+  left:40%;
+  transform: translate(50%, -50%);
+}
+.middle13{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 110%;
+  left:63%;
+  transform: translate(50%, -50%);
+}
+.middle2{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left:67%;
+  transform: translate(50%, -50%);
+}
+.middle21{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 170%;
+  left:2%;
+  transform: translate(50%, -50%);
+}
+.middle22{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 170%;
+  left:35%;
+  transform: translate(50%, -50%);
+}
+.middle23{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 170%;
+  left:70%;
+  transform: translate(50%, -50%);
+}
+.middle31{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 235%;
+  left:6%;
+  transform: translate(50%, -50%);
+}
+.middle32{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 235%;
+  left:38%;
+  transform: translate(50%, -50%);
+}
+.middle33{
+  transition: 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  top: 235%;
+  left:70%;
+  transform: translate(50%, -50%);
+}
+.con:hover .image  {
+  opacity: 0.3;
+}
+.con:hover .middle,.con:hover .middle1,.con:hover .middle2,.con:hover .middle11,.con:hover .middle12,.con:hover .middle13,.con:hover .middle21,.con:hover .middle22,.con:hover .middle23,.con:hover .middle31,.con:hover .middle32,.con:hover .middle33  {
+  opacity: 1;
+}
+
+.text {
+  color: black;
+  font-size: 30px;
+  padding: 16px 32px;
+}
+	li{
+		display: inline;
+		font-size: 25px;
+	}
+	p{
+		text-indent: 30px;
+		font-size: 20px;
+		text-align: justify;
+	}
+	
+	.narmatha{
+		background-image:url('https://www.corinthia.com/application/files/6315/0460/7084/corinthia-hotel-tripoli-lobby.jpg');
+		height: 600px;
+	}
+	#i1{
+		float: right;
+		width: 250px;
+		height: 150px;
+		padding: 20px;
+	}
+	#i2{
+		float: left;
+		width: 250px;
+		height: 150px;
+		padding: 20px;
+	}
+	#myImg,#myImg1,#myImg2,#myImg3,#myImg4,#myImg5,#myImg6,#myImg7,#myImg8,#myImg9,#myImg10,#myImg11,#myImg12,#myImg13,#myImg14,#myImg15,#myImg16,#myImg17,#myImg18,#myImg19,#myImg20,#myImg21,#myImg22,#myImg23{
+    border-radius:10px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+
+#myImg:hover,#myImg1:hover,#myImg2:hover,#myImg3:hover,#myImg4:hover,#myImg5:hover,#myImg6:hover,#myImg7:hover,#myImg8:hover,#myImg9:hover,#myImg10:hover,#myImg11:hover,#myImg12:hover,#myImg13:hover,#myImg14:hover,#myImg15:hover,#myImg16:hover,#myImg17:hover,#myImg18:hover,#myImg19:hover,#myImg20:hover,#myImg21:hover,#myImg22:hover,#myImg23:hover {opacity: 0.7;}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+}
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+</style>
+	<title>NPN HOTEL</title>
+</head>
+<body background='file:///C:\Users\ELCOT\Downloads\b1.jpg' style="background-repeat: no-repeat;">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	
+<div>	
+  <div style="text-align: right;font-size: 20px;color:white;background-color: lightbrown ">
+  	<font id="home">HOME</font>&nbsp;&nbsp;&nbsp;&nbsp;<font id="about">ABOUT</font>&nbsp;&nbsp;&nbsp;&nbsp;
+  	<font id="gallery">GALLERY</font>&nbsp;&nbsp;&nbsp;&nbsp;
+  	<font id="booking">BOOKING</font>&nbsp;&nbsp;&nbsp;&nbsp;<font id="contact">CONTACT</font>&nbsp;&nbsp;&nbsp;&nbsp;
+
+  </div>
+</div>
+  
+ <script>
+$(document).ready(function(){
+    $("#home").click(function(){
+        $("#first").show();
+        $("#para1").hide();
+        $("#fm").hide();
+        $("#gal").hide();
+        $("#m").hide();
+    });
+});
+$(document).ready(function(){
+    $("#about").click(function(){
+        $("#para1").show();
+        $("#first").hide();
+        $("#fm").hide();
+        $("#gal").hide();
+        $("#m").hide();
+    });
+});
+$(document).ready(function(){
+    $("#booking").click(function(){
+        $("#fm").show();
+        $("#para1").hide();
+        $("#first").hide();
+        $("#gal").hide();
+        $("#m").hide();
+    });
+    });
+$(document).ready(function(){
+    $("#gallery").click(function(){
+        $("#gal").show();
+        $("#fm").hide();
+        $("#para1").hide();
+        $("#first").hide();
+        $("#m").hide();
+    });
+    });
+$(document).ready(function(){
+    $("#contact").click(function(){
+    	$("#m").show();
+        $("#gal").hide();
+        $("#fm").hide();
+        $("#para1").hide();
+        $("#first").hide();
+    });
+    });
+
+</script>
+<div style="display:none" id="first">
+
+     <table cellspacing="25px" style="background-color: white">
+     	<tr>
+     		<td></td>
+     		<td style="text-align:center;font-style:italic;font-size:40px;font-family: Imprint MT Shadow;background-color: 
+     		lightblue">NPN BRANCHES</td>
+     		<td></td>
+     	</tr>
+     	<tr>
+     		
+     		<td>
+              <div class="con">
+     			<img src="https://s-ec.bstatic.com/images/hotel/max1280x900/112/112107707.jpg" class="image" width="400px" height="350px" >
+     			<div class="middle">
+              <div class="text"><u>USA</u></div>
+               </div>
+     	</div>
+     	</td>
+     		<td>
+            <div class="con">
+     			<img src="https://www.safarihotelsnamibia.com/wp-content/uploads/2014/11/Safari-Court-Hotel-Pool.jpg" class="image" width="400px" height="350px">
+            <div class="middle1">    
+              <div class="text"><u>CANADA</u></div>
+               </div>
+     	</div>
+     		</td>
+     		<td>
+            <div class="con">
+     			<img src="http://freshhotel.gr/wp-content/uploads/2016/07/fresh-hotel-executiveroom.jpg" class="image" width="400px" height="350px">
+                <div class="middle2">
+              <div class="text"><u>GERMANY</u></div>
+               </div>
+     	</div>
+
+     		</td>
+     	</tr
+     	<tr>
+     		<td>
+            <div class="con">
+     			<img src="https://www.rwsentosa.com/-/media/project/non-gaming/rwsentosa/hotels/hard-rock-hotel-singapore/hardrockhotelsg-exterior.jpg" width="400px" height="350px" class="image">
+             <div class="middle11">
+              <div class="text"><u>ITALY</u></div>
+               </div>
+     	</div>
+     		</td>
+     		<td>
+            <div class="con">
+     			<img src="http://www.geobookings.com/data/accomodations/03ac5df68db3441893459f77c0b8743f.jpg" class="image" width="400px" height="350px">
+            <div class="middle12">
+              <div class="text"><u>PARIS</u></div>
+               </div>
+     		</td>
+     		<td>
+             <div class="con">
+     			<img src="https://www.omnihotels.com/-/media/images/hotels/ausctr/pool/ausctr-omni-austin-hotel-downtown-evening-pool.jpg?h=660&la=en&w=1170" class="image" width="400px" height="350px">
+            <div class="middle13">
+              <div class="text"><u>SWITZERLAND</u></div>
+               </div>
+     		</td>
+     	</tr>
+     	<tr>
+     		<td>
+            <div class="con">
+     			<img src="http://www.litorehotel.com/web/en/images/placeholders/1920x1200-0.jpg" width="400px" height="350px" class="image">
+             <div class="middle21">
+              <div class="text"><u>DENMARK</u></div>
+               </div>
+     		</td>
+     		</td>
+     		<td>
+            <div class="con">
+     			<img src="https://imgak.mmtcdn.com/mi8/images/slideshow/360x140-ih-140717.jpg" width="400px" height="350px" class="image">
+            <div class="middle22">
+              <div class="text"><u>LONDON</u></div>
+               </div>
+     		</td>
+     		<td>
+             <div class="con">
+     			<img src="http://www.hotelscalabria.net/wp-content/uploads/2017/09/Hotel-Review.jpg" width="400px" height="350px" class="image">
+            <div class="middle23">
+              <div class="text"><u>EUROPE</u></div>
+               </div>
+     		</td>
+     	</tr>
+     	<tr>
+     		<td>
+               <div class="con">
+     			<img src="https://www.riu.com/en/binaris/new-slide-hotel-riu-le-morne_tcm55-179811.jpg" width="400px" height="350px" class="image" >
+            <div class="middle31">
+              <div class="text"><u>JAPAN</u></div>
+               </div>
+     		</td>
+     		<td>
+                <div class="con">
+     			<img src="https://phgcdn.com/images/uploads/LADTC/corporatemasthead/talatona-convention-hotels.jpg" class="image" width="400px" height="350px">
+            <div class="middle32">
+              <div class="text"><u>CHINA</u></div>
+               </div>
+     		</td>
+     		<td>
+             <div class="con">
+     			<img src="https://2486634c787a971a3554-d983ce57e4c84901daded0f67d5a004f.ssl.cf1.rackcdn.com/hotel-ballast/media/Home_Ballast_homepage_header-5abbc3c21c5bf-5ac38d3500184.jpg" width="400px" class="image" height="350px">
+            <div class="middle33">
+              <div class="text"><u>TOKYO</u></div>
+               </div>
+     		</td>
+     	</tr>
+     </table>
+	</div>
+  <div style="display:none;background-color: white;color:black;padding: 10px; " id="para1" >
+<h1 style="text-align:center">ABOUT</h1>
+<div style="font-size: 30px">
+  <p><img id="i1" src="http://www.onehotels.in/img/room1-demo2.jpg">Welcome to Hotel NPN. At NPN, we believe a star hotel should offer more than a good night's sleep. It should create an environment that awakens your senses. It's one of the many intangible qualities you'll experience at Royal Highness Hotel.When you book a hotel room through an online travel agent their slice of the fee is between 15 and 25 per cent. It can even creep higher if the hotel wants more favourable exposure on the OTA's website. The person behind the check-in desk gets to see the OTA's cut but you do not, lest the words "rip off" should pass your lips.</p><br>
+<p><img id="i2" src="http://www.traveller.com.au/content/dam/images/g/t/0/i/9/u/image.related.articleLeadwide.620x349.gt0h4s.png/1484265910296.jpg">Our Hotel Royal Highness, Ahmedabad based three star is situated at a prime location in the city. As central as you dream The Hotel is located in the heart of the city 4 kms form the Railway station 11 kms from the Airport. Right Next to the Main Business area and Markets.Just like airlines, hotels know that some guests who booked a room are not going to show up so they overbook to ensure a full house. If it should happen that all the booked guests arrive you might be out of luck. If the hotel behaves honourably, you should get "walked" to another property. While you're supposed to get a room in a hotel at least equal to the one that's been snatched you might feel you've missed out, in which case a letter to the general manager and a salvo on TripAdvisor is salve to the wounds.</p>
+<br>
+<p><img id="i1" src="http://www.rajmahal-hotel.com/img/room/lobby.jpg">The hotel offers 41 well equipped guest rooms designed to make your stay as comfortable as possible, besides these rooms we have 4 suits, which are tastefully decorated and equal to the highest standards. The facilities include, "Rhythm" a round the clock coffee shop and "La Fontaine" a multi-cuisine restaurant serving Indian, Continental, Chinese and south Indian Dishes.You've scored a bargain deal at a great hotel in Hawaii, but when you show up at the front desk the hotel charges you another $25 per night to cover the use of the pool, the Wi-Fi, the gym and whatever else the hotel can think of. There's no dodge, you can't decline on the basis of no-use, no-pay. Resort fees work like a charm for hotels since they allow them to advertise a lower base rate that makes them look cheap alongside their competitors and since they're charged at the front desk.</p>
+<br>
+<p><img id="i2" src="https://www.bangkokpalace.com/images/bangkok-lobby-bar.jpg">The splendid decorated Banquet hall - King's court is ideal venue for exhibitions, product display, sales meetings etc. We at Royal Highness strive to provide our guests comfortable accommodation, prompt and personalize service and wholesome food in a pleasant and courteous environment.It is imperative that every single visual (whether it’s a photo, video or virtual tour) has its own, unique caption – no matter how similar they may seem. Your hotel’s rooms with one king-size bed are not identical to the rooms which hold two queen-size beds, so why should your photo descriptions be? Vividly explaining the benefits of staying in an upgraded room can even entice travel shoppers to upgrade!</p><br>
+</div>
+</div>
+
+	<form name='registration' id="fm" onSubmit="return formValidation();" class="narmatha" style="display: none;color: black; padding-left: 450px;padding-right: 350px;font-style: bold; font-size:20px;padding-top: 60px">
+		<div >
+		
+		<table style="background-color: #d3b17d;opacity: 0.9;padding:30px  ">
+			<tr>
+				<td><h2 style="color:red;text-align: center;">REGISTRATION FORM</h2><br></td>
+			</tr>
+		<tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name&nbsp;&nbsp;&nbsp;<input type="text"  placeholder="Enter your name" name="uname"  required="required" ><br><br></td>
+			</tr>
+		<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" placeholder="Enter your email id" name="umid" required="required"><br><br></td></tr>
+		<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobile No&nbsp;&nbsp;&nbsp;<input type="text" placeholder="Enter your Mobile number" name="uno" pattern="[0-9]{10}" required="required"><br><br></td></tr>
+        <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="uadd1" rows="5" cols="21"></textarea><br><br></td></tr>
+        <tr>
+        	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Room&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <input id="ra1" type="radio" name="AC">AC&nbsp;&nbsp;&nbsp;
+             <input id="ra2" type="radio" name="NAC">Non-AC&nbsp;&nbsp;<br><br></td>
+        </tr>
+        <tr>
+        	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <input id="rb1"  type="radio" name="SB">Single Bed&nbsp;&nbsp;
+             <input id="rb2"  type="radio" name="DB">Double Bed&nbsp;&nbsp;<br><br></td>
+        </tr>
+        <tr>
+        	<td align="center"><input type="submit" value="submit" name="submit" style="font-size: 18px">&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        </tr>
+    </table>
+</div>
+	</form>
+	<script type="text/javascript">
+    function formValidation()
+{
+var uid = document.registration.uname;
+var uemail = document.registration.umid;
+var uadd = document.registration.uadd1;
+var ac = document.registration.AC;
+var nac = document.registration.NAC;
+var sb = document.registration.SB;
+var db = document.registration.DB;
+
+if(allLetter(uid))
+{
+if(ValidateEmail(uemail))
+{ 
+if(validroom(ac,nac))
+{
+if(validBed(sb,db))
+{
+}
+}
+}
+}
+return false;
+}
+
+function allLetter(uid)
+{ 
+var letters = /^[A-Za-z]+$/;
+if(uid.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Username must have alphabet characters only');
+uid.focus();
+return false;
+}
+}
+
+function ValidateEmail(uemail)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(uemail.value.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+uemail.focus();
+return false;
+}
+}
+
+
+
+function passid_validation(passid,mx,my)
+{
+var passid_len = passid.value.length;
+if (passid_len == 0 ||passid_len >= my || passid_len < mx)
+{
+alert("Password should not be empty / length be between "+mx+" to "+my);
+passid.focus();
+return false;
+}
+return true;
+}
+function validroom(ac,nac)
+{
+x=0;
+
+if(ac.checked) 
+{
+x++;
+} if(nac.checked)
+{
+x++; 
+}
+if(x==0)
+{
+alert('Select AC room/Non-AC room');
+ac.focus();
+return false;
+}
+else{
+	return true;
+}
+}
+
+function validBed(sb,db)
+{
+y=0;
+if(sb.checked) 
+{
+y++;
+} if(db.checked)
+{
+y++; 
+}
+if(y==0)
+{
+alert('Select Single bed/Double bed');
+sb.focus();
+return false;
+}
+else{
+	alert('Form Successfully Submitted');
+window.location.reload()
+	return true;
+}
+}
+</script>
+
+	<div id="gal" style="display: none;background-color: white;padding-top: 5%;padding-left: 1%;padding-bottom: 5%;" >
+		<h1 align="center" style="margin-top:">NPN FOOD GALLERY</h1><br><br>
+	<img id="myImg" src="https://media-cdn.tripadvisor.com/media/photo-s/02/f9/c9/c5/siam-food-gallery.jpg"style="width:100%;max-width:200px">
+	<img id="myImg1" src="http://www.sushibushido.com/images/cvp-003.jpg"style="width:100%;max-width:205px">
+	<img id="myImg2" src="http://www.captainkensdiner.com/uploads/6/9/6/5/6965393/8498720_orig.jpg"style="width:100%;max-width:217px">
+	<img id="myImg3" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/b5nf0w3tv3el9tonopnx"style="width:100%;max-width:210px">
+	<img id="myImg4" src="http://drizzlebistro.in/images/food-items-large-1.jpg"style="width:100%;max-width:185px">
+	<img id="myImg5" src="http://fakhreldin.com/wp-content/uploads/2017/01/0056.jpg"style=" width:100%; max-width:210px">
+	<img id="myImg6" src="https://assets3.thrillist.com/v1/image/1677069/size/tmg-article_default_mobile.jpg"style="width:100%;max-width:200px">
+	<img id="myImg7" src="https://embop.com/wp-content/uploads/2017/07/gal9.jpg"style="width:100%;max-width:205px">
+	<img id="myImg8" src="https://image.shutterstock.com/image-photo/south-indian-food-breakfast-medu-260nw-567151588.jpg"style="width:100%;max-width:217px">
+	<img id="myImg9" src="https://www.bananivista.com/wp-content/uploads/2018/04/1-min-2-1.jpg"style="width:100%;max-width:210px">
+	<img id="myImg10" src="http://www.aaroncaterers.com/wp-content/uploads/2013/05/dd_salad_07.jpg"style="width:100%;max-width:210px">
+	<img id="myImg11" src="https://www.hotelmatysak.sk/wp-content/gallery/restauracia/img_0010a.jpg"style=" width:100%; max-width:190px">
+	<h1 align="center" style="padding-top: 5%">NPN ROOM GALLERY</h1><br><br>
+	<img id="myImg12" src="http://www.travelingwiththejones.com/wp/wp-content/uploads/2016/02/IMG_0187.jpg"style="width:100%;max-width:200px">
+	<img id="myImg13" src="https://apochi.com/wp-content/uploads/2016/10/iran-hotel-19.jpg"style="width:100%;max-width:225px">
+	<img id="myImg14" src="http://www.asiawebdirect.com/media/images/hotels/36929/547532.jpg"style="width:100%;max-width:225px">
+	<img id="myImg15" src="https://www.hangoverweekends.co.uk/media/18431/budget-hotel-newcastle-stag-weekend.jpg?anchor=center&mode=crop&width=305&height=225&rnd=131576389590000000"style="width:100%;max-width:200px">
+	<img id="myImg16" src="https://www.hangoverweekends.co.uk/media/17142/village-spa-hotel-newcastle-hen-weekend-2.jpg?anchor=center&mode=crop&width=305&height=225&rnd=131539206150000000"style="width:100%;max-width:200px">
+	<img id="myImg17" src="http://smederijvansteenwijk.nl/media/1006/boerenbedsteekamer.jpg?width=300px&height=225px"style=" width:100%; max-width:200px">
+	<img id="myImg18" src="https://www.hangoverweekends.co.uk/media/18415/4-star-city-centre-hotel-st-james-park-newcastle-stag-weekend.jpg?anchor=center&mode=crop&width=305&height=225&rnd=131576386920000000"style="width:100%;max-width:205px">
+	<img id="myImg19" src="https://www.hangoverweekends.co.uk/media/18456/leisure-hotel-newcastle-stag-weekend.jpg?anchor=center&mode=crop&width=305&height=225&rnd=131576393320000000"style="width:100%;max-width:205px">
+	<img id="myImg20" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN8iAbpTrXkyoKlhgvJ2-owQuPVC_gRu7lfgSGZKGblClWQupK"style="width:100%;max-width:205px">
+	<img id="myImg21" src="http://www.property-report.com/documents/10184/10911/-8996450253201280081Eight-Thonglor-300x226.gif/26f8a110-e8d3-4ae9-978c-2a3b85e9811f?t=1482847515970"style="width:100%;max-width:205px">
+	<img id="myImg22" src="https://www.hangoverweekends.co.uk/media/18408/4-star-city-centre-hotel-newcastle-stag-weekend.jpg?anchor=center&mode=crop&width=305&height=225&rnd=131576385450000000"style="width:100%;max-width:205px">
+	<img id="myImg23" src="http://www.internationalwineguild.com/uploads/Image/m_HWCC-5.jpg"style=" width:100%; max-width:205px">
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+</div>
+<script>
+
+var modal = document.getElementById('myModal');
+var img = document.getElementById('myImg');
+var img1 = document.getElementById('myImg1');
+var img2 = document.getElementById('myImg2');
+var img3 = document.getElementById('myImg3');
+var img4 = document.getElementById('myImg4');
+var img5 = document.getElementById('myImg5');
+var img6 = document.getElementById('myImg6');
+var img7 = document.getElementById('myImg7');
+var img8 = document.getElementById('myImg8');
+var img9 = document.getElementById('myImg9');
+var img10 = document.getElementById('myImg10');
+var img11 = document.getElementById('myImg11');
+var img12 = document.getElementById('myImg12');
+var img13 = document.getElementById('myImg13');
+var img14 = document.getElementById('myImg14');
+var img15 = document.getElementById('myImg15');
+var img16 = document.getElementById('myImg16');
+var img17 = document.getElementById('myImg17');
+var img18 = document.getElementById('myImg18');
+var img19 = document.getElementById('myImg19');
+var img20 = document.getElementById('myImg20');
+var img21 = document.getElementById('myImg21');
+var img22 = document.getElementById('myImg22');
+var img23 = document.getElementById('myImg23');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img1.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img2.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img3.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img4.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img5.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img6.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+img7.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img8.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img9.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img10.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img11.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img12.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img13.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img14.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img15.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img16.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img17.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img18.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+img19.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img20.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img21.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img22.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+img23.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
+<div id="m" style="display: none;background-color: white">
+	 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.664063989472!2d91.8316103150038!3d24.909437984030877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37505558dd0be6a1%3A0x65c7e47c94b6dc45!2sTechnext!5e0!3m2!1sen!2sbd!4v1444461079802" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen="">
+</div>
+</body>
+</html>
